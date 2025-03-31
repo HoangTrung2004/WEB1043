@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dt = prompt("Mời nhập diện tích (theo đơn vị mét vuông): ");
+        dt = Number(dt); 
+        var sao = dt / 360;
+        var mau = dt / 3600;
+        var ha = dt / 10000; 
+
+        document.write("Diện tích: " + dt + " mét vuông = " + sao + " sao" +
+            "<br>Diện tích: " + dt + " mét vuông = " + mau + " mẫu" +
+            "<br>Diện tích: " + dt + " mét vuông = " + ha + " ha"
+        );
+    </script>
+</body>
+</html>

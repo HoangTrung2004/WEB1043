@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var p = prompt("Xin moi nhap trong luong co the: ")
+        var h = prompt("Xin moi nhap chieu cao (tinh theo cm): ")
+        var bmi = (p/(h*h))
+        if(bmi<18.5){
+            alert("Ban dang thieu can!")
+        } else if(bmi>=18.5 && bmi<25){
+            alert("Ban dang binh thuong!")
+        } else if(bmi>=25 && bmi<30){
+            alert("Ban dang thua can")
+        } else{
+            alert("Ban dang beo phi!")
+        }
+    </script>
+</body>
+</html>

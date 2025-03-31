@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const theList = [
+        "Lauren",
+        "Kevin",
+        true,
+        35,
+        null,
+        undefined,
+        ["one", "two"],
+      ];
+      console.log(theList); 
+
+      //Xóa phần tử đầu
+      theList.splice(0,1);
+      console.log(theList); 
+
+      // Xóa phàn tử cuối
+      theList.pop();
+      console.log(theList);
+      // chèn vào vị trí 3 không xóa phần tử nào
+      theList.splice(3, 0, "hello world");
+      console.log(theList);
+      // chèn vào vị trí 2 không xóa phần tử nào
+      theList.splice(2, 0, "middle");
+      console.log(theList);
+
+      
+
+   
+    </script>
+</body>
+</html>
