@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Game</title>
+    <style>
+        .output {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+
+        .message {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.3em;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: red;
+            cursor: pointer;
+            display: none; /* Ẩn ban đầu */
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="output">
+        <div class="box"></div>
+    </div>
+
+    <div class="message">Press the button to start</div>
+    <button onclick="startGame()">Start</button>
+
+    <script>
+        const output = document.querySelector(".output");
+        const message = document.querySelector(".message");
+        const box = document.querySelector(".box");
+
+        const game = {
+            startTime: null,
+            timeoutID: null
+        };
+
+        function startGame() {
+            message.textContent = "Wait for the box...";
+            box.style.display = "none";
+
+            const delay = Math.random() * 2000 + 1000; // Delay từ 1-3s
+
+            game.timeoutID = setTimeout(() => {
+                // Đặt vị trí ngẫu nhiên trong khung
+                const maxX = output.clientWidth - box.clientWidth;
+                const maxY = output.clientHeight - box.clientHeight;
+
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+
+                box.style.left = `${randomX}px`;
+                box.style.top = `${randomY}px`;
+
+                box.style.display = "block";
+                game.startTime = Date.now();
+                message.textContent = "Click the red box!";
+            }, delay);
+        }
+
+        box.addEventListener("click", () => {
+            const reactionTime = (Date.now() - game.startTime) / 1000;
+            box.style.display = "none";
+            message.textContent = `Your reaction time is ${reactionTime.toFixed(3)} seconds.`;
+            clearTimeout(game.timeoutID); // Dừng timeout nếu người dùng click sớm
+        });
+    </script>
+</body>
+</html>

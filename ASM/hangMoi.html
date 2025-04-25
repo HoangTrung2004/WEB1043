@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<style>
+ /* ===== Menu danh mục bên trái ===== */
+#dm {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ddd;
+  min-height: 400px;
+}
+
+#dm li {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+#dm li:hover {
+  background-color: #e0e0e0;
+}
+
+#dm li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+/* ===== Bố cục trang chính ===== */
+main {
+  display: flex;
+  padding: 20px;
+}
+
+aside {
+  width: 20%;
+}
+
+article {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* ===== Sản phẩm ===== */
+/* Giao diện cho khung sản phẩm */
+.col25 {
+  width: 23%;
+  margin: 1%;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px; /* Giới hạn chiều cao khung */
+}
+
+/* Hover nhẹ khi rê chuột */
+.col25:hover {
+  transform: translateY(-4px);
+}
+
+/* Ảnh sản phẩm */
+.col25 img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover; /* Cắt ảnh cho vừa khung, không méo */
+  display: block;
+}
+
+/* Tên sản phẩm */
+.product-name {
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+  padding: 10px 8px 0;
+  height: 45px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Giá hiện tại */
+.price {
+  color: deeppink;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Giá cũ */
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+  display: block;
+}
+
+/* Giảm giá */
+.discount {
+  background-color: #c0392b;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 4px 10px;
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+/* Nút thêm vào giỏ */
+.buy-button {
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 8px 0 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.buy-button:hover {
+  background-color: #00796b;
+}
+
+
+</style>
+<body>
+    <script src="js/data.js"></script>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="images/couple_TX.png" alt="">
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <a href="index2.html">Trang chủ</a>
+                <a href="haangMoi.html">  Hàng mới  </a>
+                <a href="">  Áo khoác </a>
+                <a href=""> Nam </a>
+                <a href="">  Nữ </a>
+                <a href="">  Đồ đôi </a>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href=""><i class="bi bi-search"> </i></a>
+            <a href="gioHang.html"><i class="bi bi-cart"></i></a>
+            <a href="">Chào trungle</i></a>
+            <br>
+            <a href="index.html">Log Out</a>
+        </div>
+        <div class="banner">
+            <!-- <img src="images/banner_TX.png" alt=""> -->
+            <img src="images/banner_TX.png" alt="">
+        </div>
+    </div>
+    </header>
+
+    <main>
+        <aside>
+            <ul id="dm">
+                <li>1</li>
+            </ul>
+        </aside>
+        <article>
+            <div class="ds" id="sp">
+                
+                   <!-- Hiển thị sản phẩm ở đây -->
+                
+            </div>
+        </article>
+    </main>
+    <footer></footer>
+</div>
+<script src="js/logo.js"></script>
+<script src="js/showdm_sp.js"></script>
+<script>
+
+    function showct(p){
+        let index=p.parentElement.parentElement.firstElementChild.innerText;
+        console.log(index);
+        
+        localStorage.setItem("index",index);
+        window.location.href="product-detail.html";
+    }
+
+</script>
+<script>
+    showdm();
+    showsp();
+</script>
+
+        
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>ĐĂNG KÍ NHẬN TIN KHUYẾN MÃI</h4>
+                <input type="email" placeholder="Nhập email của bạn">
+                <button><i class="bi bi-envelope"></i></button>
+            </div>
+            <div class="footer-section">
+                <h4>KHÁM PHÁ</h4>
+                <ul>
+                    <li>BST Fast & Furious</li>
+                    <li>BST Summer</li>
+                    <li>BST Minion</li>
+                    <li>Áo Khoác</li>
+                    <li>Áo Thun</li>
+                    <li>Áo Polo</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>VỀ COUPLE TX</h4>
+                <ul>
+                    <li>Giới Thiệu</li>
+                    <li>Nhượng Quyền Thương Mại</li>
+                    <li>Công Nghệ Sản Xuất</li>
+                    <li>Cơ Hội Việc Làm</li>
+                    <li>Điều Khoản Sử Dụng</li>
+                    <li>Hệ Thống Cửa Hàng</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>TÀI KHOẢN</h4>
+                <ul>
+                    <li>Đăng Nhập/Đăng Ký</li>
+                    <li>Lịch Sử Mua Hàng</li>
+                    <li>Danh Sách Địa Chỉ</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li>Chính Sách Thành Viên</li>
+                    <li>Chính Sách Đổi Hàng</li>
+                    <li>Chính Sách Bảo Hành</li>
+                    <li>Hướng Dẫn Mua Hàng</li>
+                    <li>Hướng Dẫn Chọn Size</li>
+                    <li>Câu Hỏi Thường Gặp</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

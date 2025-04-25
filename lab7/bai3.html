@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Đăng Nhập</title>
+    <style>
+      form {
+        width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+      }
+
+      input {
+        height: 50px;
+        font-size: 20px;
+        margin: 5px 0;
+        padding: 3px 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        width: 150px;
+        height: 50px;
+        margin: 20px auto 0;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #388e3c;
+      }
+    </style>
+
+    <script>
+      function login(event) {
+        event.preventDefault(); // Ngăn form reload
+
+        var firstName = document.getElementsByName("tên")[0];
+        var lastName = document.getElementsByName("họ")[0];
+        var age = document.getElementsByName("tuổi")[0];
+
+        if (firstName.value === "") {
+          alert('Hãy nhập tên, họ và tuổi!');
+          return false;
+        }
+
+        if (lastName.value === "") {
+          alert('Hãy nhập họ và tuổi!');
+          return false;
+        }
+
+        if (age.value === "" || isNaN(age.value) || age.value <= 0) {
+          alert('Hãy nhập tuổi hợp lệ (> 0)!');
+          return false;
+        }
+
+        alert(`Đăng nhập thành công:
+Tên: ${firstName.value}
+Họ: ${lastName.value}
+Tuổi: ${age.value}`);
+        return true;
+      }
+    </script>
+  </head>
+
+  <body>
+    <form onsubmit="login(event)">
+      <input type="text" name="tên" placeholder="Tên" />
+      <input type="text" name="họ" placeholder="Họ" />
+      <input type="number" name="tuổi" placeholder="Tuổi" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

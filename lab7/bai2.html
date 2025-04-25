@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dịch chuyển khối</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #block {
+      background-color: purple;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 150px;
+      left: 0;
+      transition: 0.1s;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="toTheRight()">Sang Phải</button>
+  <div id="block"></div>
+
+  <script>
+    function toTheRight() {
+      let b = document.getElementById("block");
+      let x = 0;
+      let move = setInterval(function () {
+        if (x >= 1200) {
+          clearInterval(move); // Dừng khi đạt giới hạn
+        } else {
+          x++;
+          b.style.left = x + "px";
+        }
+      }, 2);
+    }
+  </script>
+</body>
+</html>

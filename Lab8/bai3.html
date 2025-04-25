@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      width: 800px;
+      height: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    #controls button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+  
+  <div class="container">
+    <h1>Video 4K</h1>
+    <div id="player-container">
+      <video
+        id="myplayer"
+        width="640"
+        height="360"
+        controls
+        src="Video Test 2K Samsung.mp4">
+      </video>
+      <div id="controls">
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="stopVideo()">Stop</button>
+        <button onclick="replayVideo()">Replay</button>
+        <button onclick="increaseVolume()">Volume (+)</button>
+        <button onclick="decreaseVolume()">Volume (-)</button>
+        <button onclick="muteVolume()">Mute/Unmute</button>
+      </div>
+    </div>
+  </div>
+  
+
+    <script>
+      var video = document.getElementById("myplayer");
+      function playPause() {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+
+      function stopVideo() {
+        video.pause();
+        if (video.currentTime) {
+          video.currentTime = 0;
+        }
+      }
+
+      function replayVideo() {
+        video.currentTime = 0;
+        video.play();
+      }
+      function increaseVolume() {
+        if (video.volume < 1) {
+          video.volume = parseFloat(video.volume + 0.1).toFixed(1);
+        }
+      }
+      function decreaseVolume() {
+        if (video.volume > 0) {
+          video.volume = parseFloat(video.volume - 0.1).toFixed(1);
+        }
+      }
+      function muteVolume() {
+        if (video.muted) {
+          video.muted = false;
+        } else {
+          video.muted = true;
+        }
+      }
+    </script>
+  </body>
+</html>

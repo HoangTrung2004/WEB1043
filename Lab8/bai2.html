@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    
+  </head>
+  <body>
+    <div class="container">
+      <p>Nhấn vào Button để hiển thị tọa độ</p>
+      <button onclick="getLocation()">Lấy tọa độ</button>
+       <p id="demo"></p> <!-- HIỂN THỊ TỌA ĐỘ -->
+      <script>
+        let x = document.getElementById("demo");
+
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            x.innerHTML = "Không hỗ trợ";
+          }
+        }
+        function showPosition(position) {
+          x.innerHTML =
+            "Vĩ độ: " +
+            position.coords.latitude +
+            "<br> Kinh độ " +
+            position.coords.longitude;
+        }
+      </script>
+    </div>
+  </body>
+</html>

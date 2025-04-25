@@ -1,0 +1,391 @@
+body {
+    max-width: 1200px;
+    margin: 5px auto;
+}
+
+.container{
+    max-width: 100%;
+}
+.logo{
+    width: 10%;
+    float: left;
+}
+.logo img{
+    width: 100%;
+}
+.menu{
+    float: left;
+    width: 70%;
+    text-align: center;
+}
+.menu a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    padding: 20px;
+    color: black;
+}
+.menu a:hover{
+    color: green;
+}
+.icons{
+    text-align: right;
+    padding-top: 40px;
+}
+.icons i {
+    margin-left: 15px;
+    font-size: 20px;
+}
+.icons i:hover{
+    color: red;
+}
+
+/* Container của banner */
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Ảnh banner */
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Nút điều hướng trái/phải */
+  .banner button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Nút bên trái */
+  .banner button:first-of-type {
+    left: 20px;
+  }
+  
+  /* Nút bên phải */
+  .banner button:last-of-type {
+    right: 20px;
+  }
+  
+  /* Hiệu ứng hover cho nút */
+  .banner button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+
+
+/*LAYOUT1*/
+.layout1{
+    width: 100%;
+    text-align: center;
+    margin: 2% auto;
+
+}
+
+.layout1 div{
+    display: inline-block;
+}
+
+.layout1 img{
+    width: 100%;
+}
+
+.hinh1{
+    width: 32%;
+    float: left;
+}
+
+.hinh2{
+    width: 32%;
+}
+
+.hinh3{
+    width: 32%;
+    float: right;
+}
+.btns{
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px 100px;
+    margin-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    cursor: pointer; /* Biến con trỏ thành bàn tay */
+
+}
+.btns:hover{
+    background-color: gray;
+    color: white ;
+}
+
+
+/*LAYOUT 3*/
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Căn đều khoảng cách */
+}
+
+.col25 {
+    width: 23%; /* Giữ khoảng cách giữa các cột */
+    height: 500px;
+    float: left;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Viền nhẹ */
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+}
+
+.col25 img {
+    width: 100%;
+    height: 300px; /* Định chiều cao ảnh */
+    object-fit: cover; /* Giữ hình ảnh không méo */
+    border-radius: 8px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 14px;
+}
+
+.discount {
+    color: black;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.buy-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.buy-button:hover {
+    background: green;
+}
+
+/* LAYOUT 3 */
+.layout3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    max-width: 1200px;
+    clear: both;
+}
+
+.category {
+    position: relative;
+    width: 49%;
+}
+
+.category img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.category-btn {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    transition: 0.3s;
+}
+
+.category-btn:hover {
+    color: green;
+}
+
+
+ /* LAYOUT 4 */
+ .layout4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+.product {
+    width: 24%;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer; /* Biến con trỏ thành bàn tay */
+
+}
+
+.product h3:hover {
+    text-decoration: underline;
+    color: #ff6600;
+}
+
+.product p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.discount {
+    color: red;
+    font-weight: bold;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    cursor: pointer; /* Biến con trỏ thành bàn tay */
+
+
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.color.white {
+    background-color: white;
+}
+
+.color.black {
+    background-color: black;
+}
+
+.color.green {
+    background-color: green;
+}
+
+.color.blue {
+    background-color: lightblue;
+}
+
+
+ /* FOOTER */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #222;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    overflow: hidden; /* Ngăn chặn lỗi nhảy banner */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.footer-section ul li:hover {
+    color: #f39c12;
+}
+
+.footer-section input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-section button {
+    padding: 10px;
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-section button:hover {
+    background-color: #e67e22;
+}
+
+
+.icons a {
+    text-decoration: none;  /* Loại bỏ gạch chân */
+}
+
+.icons a:hover {
+    text-decoration: underline;  /* Thêm gạch chân khi hover (tuỳ chọn) */
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chiTiet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <script src="js/data.js"></script>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="images/couple_TX.png" alt="">
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <a href="index.html">Trang chủ</a>
+                <a href="hangMoi.html">  Hàng mới  </a>
+                <a href="">  Áo khoác </a>
+                <a href=""> Nam </a>
+                <a href="">  Nữ </a>
+                <a href="">  Đồ đôi </a>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href=""><i class="bi bi-search"> </i></a>
+            <a href=""><i class="bi bi-cart"></i></a>
+            <a href="">Chào trungle</i></a>
+            <br>
+            <a href="index.html">Log Out</a>
+        </div>
+        <div class="banner">
+            <!-- <img src="images/banner_TX.png" alt=""> -->
+            <img src="images/banner_TX.png" alt="">
+        </div>
+    </div>
+    </header>
+
+    <div class="containerr">
+        <div class="left">
+            <div id="anhDiv">
+                <img id="anhLon" src="images/ao3.webp" alt="">
+            </div>
+            <div class="nho-anh">
+                <img src="images/khoac_nho1.webp" alt="" onclick="hienThi('khoac_nho1.webp')">
+                <img src="images/khoac_nho2.webp" alt="" onclick="hienThi('khoac_nho2.webp')">
+                <img src="images/khoac_nho3.webp" alt="" onclick="hienThi('khoac_nho3.webp')">
+            </div>
+        </div>
+        
+        <div class="right">
+          <h2>Áo Khoác Nữ Anti UV Original WOK 2064</h2>
+          <p class="price">699,000 VND</p>
+          
+          <p><strong>Size:</strong></p>
+          <div class="sizes">
+            <button>S</button>
+            <button>M</button>
+            <button>L</button>
+            <button>XL</button>
+          </div>
+          
+          <p><strong>Số lượng:</strong></p>
+          <div class="quantity">
+            
+            <input type="number" value="1">
+            
+          </div>
+          <br>
+          <button class="buttons">Mua ngay</button>
+          <br>
+        <p>   Áo Khoác Nữ Anti UV Original WOK 2064 Chiếc áo bảo vệ làn da tối đa với công nghệ áp dụng hợp chất chống triệt để tia UV, cùng chất liệu mềm mịn trên da và dải màu rộng thì đây là sản phẩm tuyệt vời để sử dụng hàng ngày là lựa chọn hoàn hảo cho những ai yêu thích phong cách nữ tính nhẹ nhàng mà vẫn có thể bảo vệ làn da của mình. 
+            Chất liệu: 60% Cotton + 40% Polyester – 240% GSM.
+            Form dáng: Regular 
+            Màu sắc: Xanh Đậm Poseidon, Xám Metal, Xanh Blue Surf, Tím Hồng Zephyr, Vàng
+            Sản xuất: Việt Nam</p>
+
+        </div>
+      </div>
+      
+
+   
+    
+
+    <script>
+        function hienThi(str=`ao3.webp`) {
+        var node = document.getElementById("anhDiv");
+        node.innerHTML= `<img src="images/` + str + `" alt= "">`;
+    }
+    </script>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>ĐĂNG KÍ NHẬN TIN KHUYẾN MÃI</h4>
+                <input type="email" placeholder="Nhập email của bạn">
+                <button><i class="bi bi-envelope"></i></button>
+            </div>
+            <div class="footer-section">
+                <h4>KHÁM PHÁ</h4>
+                <ul>
+                    <li>BST Fast & Furious</li>
+                    <li>BST Summer</li>
+                    <li>BST Minion</li>
+                    <li>Áo Khoác</li>
+                    <li>Áo Thun</li>
+                    <li>Áo Polo</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>VỀ COUPLE TX</h4>
+                <ul>
+                    <li>Giới Thiệu</li>
+                    <li>Nhượng Quyền Thương Mại</li>
+                    <li>Công Nghệ Sản Xuất</li>
+                    <li>Cơ Hội Việc Làm</li>
+                    <li>Điều Khoản Sử Dụng</li>
+                    <li>Hệ Thống Cửa Hàng</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>TÀI KHOẢN</h4>
+                <ul>
+                    <li>Đăng Nhập/Đăng Ký</li>
+                    <li>Lịch Sử Mua Hàng</li>
+                    <li>Danh Sách Địa Chỉ</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li>Chính Sách Thành Viên</li>
+                    <li>Chính Sách Đổi Hàng</li>
+                    <li>Chính Sách Bảo Hành</li>
+                    <li>Hướng Dẫn Mua Hàng</li>
+                    <li>Hướng Dẫn Chọn Size</li>
+                    <li>Câu Hỏi Thường Gặp</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

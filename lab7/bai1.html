@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kéo Thả Đơn Giản</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 30px;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        border: 2px dashed #999;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 24px;
+        color: #333;
+        transition: background-color 0.3s ease;
+      }
+
+      .box:hover {
+        background-color: #f9f9f9;
+      }
+
+      #dragme {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+       
+      }
+
+      
+    </style>
+    <script>
+      let holderItem;
+      function dStart() {
+        holderItem = event.target;
+      }
+      function nDrop() {
+        event.preventDefault();
+      }
+      function dDrop() {
+        event.preventDefault();
+        if (event.target.classList.contains("box")) {
+          event.target.appendChild(holderItem);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="box" ondrop="dDrop()" ondragover="nDrop()">
+      
+      <div id="dragme" draggable="true" ondragstart="dStart()">
+        Hãy kéo tôi!
+      </div>
+    </div>
+    <div class="box" ondrop="dDrop()" ondragover="nDrop()"></div>
+  </body>
+</html>

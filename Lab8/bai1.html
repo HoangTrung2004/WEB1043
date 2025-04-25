@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload File Example</title>
+    <style>
+      /* Reset CSS để bỏ qua các margin và padding mặc định */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Tạo nền cho trang web */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* Bố cục chính */
+      .upload-container {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 435px;
+        text-align: center;
+      }
+
+      /* Tiêu đề của phần tải lên */
+      .upload-container h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      /* Phần tải lên */
+      .upload-section {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #fafafa;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        transition: all 0.3s ease;
+      }
+
+      .upload-section:hover {
+        background-color: #f0f8ff;
+        border-color: #007bff;
+      }
+
+      /* Label cho các phần tải lên */
+      .upload-section label {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 10px;
+        display: block;
+        font-weight: 500;
+      }
+
+      /* Input file */
+      .upload-section input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 2px solid #007bff;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      /* Khi hover vào input file */
+      .upload-section input[type="file"]:hover {
+        border-color: #0056b3;
+        background-color: #e9f5ff;
+      }
+
+      /* Đổi màu khi focus vào input file */
+      .upload-section input[type="file"]:focus {
+        border-color: #0056b3;
+        outline: none;
+      }
+
+      /* Thông báo tên tệp đã tải lên */
+      #message,
+      #message1 {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+      }
+
+      /* Dấu gạch ngang */
+      hr {
+        margin: 20px 0;
+        border: 0;
+        border-top: 1px solid #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="upload-container">
+      <!-- Upload 1 file -->
+      <div class="upload-section">
+        <label for="file1">Tải lên 1 tệp:</label>
+        <input type="file" id="file1" onchange="uploadFile(this.files)" />
+        <div id="message"></div>
+      </div>
+
+      <hr />
+
+      <!-- Upload multiple files -->
+      <div class="upload-section">
+        <label for="file2">Tải lên nhiều tệp:</label>
+        <input
+          type="file"
+          id="file2"
+           onchange="uploadFile1(this.files)"/>
+        <div id="message1"></div>
+      </div>
+    </div>
+
+    <script>
+      let message = document.getElementById("message");
+      let message1 = document.getElementById("message1");
+      
+      function uploadFile(files) {
+        console.log(files[0]);
+        message.innerHTML = files[0].name; // Hiển thị tên tệp đã chọn (Chuỗi)
+      }
+
+      function uploadFile1(files1) {
+        for (let i = 0; i < files1.length; i++) {
+          message1.innerHTML += files1[i].name + "<br>";
+        }
+      }
+    </script>
+  </body>
+</html>

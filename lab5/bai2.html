@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function them(button) {
+        var row = button.closest("tr");
+        var name = row.cells[0].innerText;
+        var price = row.cells[1].innerText;
+    
+        var newRow = document.createElement("tr");
+    
+        newRow.innerHTML = `
+          <td>${name}</td>
+          <td>${price}</td>
+          <td><button onclick="xoa(this)">Xóa</button></td>
+        `;
+    
+        document.getElementById("cart").appendChild(newRow);
+        tong();
+      }
+    
+      function xoa(button) {
+        button.closest("tr").remove();
+        tong();
+      }
+    
+      function tong() {
+        let rows = document.querySelectorAll("#cart tr");
+        let total = 0;
+        rows.forEach(row => {
+          let priceText = row.cells[1].innerText.replace("$", "");
+          total += Number(priceText);
+        });
+        document.getElementById("Tong").innerText = total;
+      }
+    </script>
+    
+  </head>
+  <body>
+    <h2>Danh mục hàng hóa</h2>
+    <table border="1">
+      <tr>
+        <td>iphone 9</td>
+        <td>$2700</td>
+        <td>
+          <button onclick="them(this)">Thêm</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Sumsung Star</td>
+        <td>$1500</td>
+        <td>
+          <button onclick="them(this)">Thêm</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Nokia 2020</td>
+        <td>$1200</td>
+        <td>
+          <button onclick="them(this)">Thêm</button>
+        </td>
+      </tr>
+      <tr>
+        <td>sony Xperia</td>
+        <td>$1700</td>
+        <td>
+          <button onclick="them(this)">Thêm</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Giỏ hàng của bạn</h2>
+    <div id="not-emty">
+      <table border="1" id="cart"></table>
+      <h2>Tổng số tiền $<span id="Tong">0</span></h2>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<style>
+    .icons a {
+    text-decoration: none;  /* Loại bỏ gạch chân */
+}
+
+.icons a:hover {
+    text-decoration: underline;  /* Thêm gạch chân khi hover (tuỳ chọn) */
+}
+
+</style>
+<body>
+    <script src="js/data.js"></script>
+    <header>
+        <div class="container">
+        <div class="logo">
+            <img src="images/couple_TX.png" alt="">
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <a href="index2.html">Trang chủ</a>
+                <a href="hangMoi.html">  Hàng mới  </a>
+                <a href="">  Áo khoác </a>
+                <a href=""> Nam </a>
+                <a href="">  Nữ </a>
+                <a href="">  Đồ đôi </a>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <a href=""><i class="bi bi-search"> </i></a>
+            <a href=""><i class="bi bi-cart"></i></a>
+            <a href="">Chào trungle</i></a>
+            <br>
+            <a href="index.html">Log Out</a>
+        </div>
+        <div class="banner">
+            <img id="banner-img" src="images/banner_TX.png" alt="Banner" width="100%">
+            <br>
+            <button onclick="changeBanner(-1)">← </button>
+            <button onclick="changeBanner(1)"> →</button>
+        </div>
+    </div>
+    </header>
+
+    <main>
+        <div class="layout1">
+            <div class="hinh1">
+                <img src="images/nam.webp" alt="">
+                <button class="btns">NAM</button> 
+            </div>
+            <div class="hinh2">
+                <a href="chiTiet.html"><img src="images/thun1.webp" alt="" ></a>
+                
+                <a href="chiTiet.html"><button class="btns" a>NỮ</button></a>
+                 
+            </div>
+            <div class="hinh3">
+                <a href="chiTiet2.html"><img src="images/ao3.webp" alt="Áo thun 3"></a>
+                <a href="chiTiet2.html"> <button class="btns">ÁO KHOÁC</button> </a>
+                
+            </div>
+        </div>
+        
+        
+
+            <div class="layout3">
+                <div class="category">
+                    <img src="images/polocaocap.webp" alt="Áo Polo Cao Cấp">
+                    <div class="overlay">
+                        <a href="#" class="category-btn">ÁO POLO CAO CẤP →</a>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="images/thuncaocap.png" alt="Áo Thun Đa Phong Cách">
+                    <div class="overlay">
+                        <a href="aothun.html" class="category-btn">ÁO THUN ĐA PHONG CÁCH →</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Layout 4 - Sản phẩm nổi bật -->
+        <!-- Layout 4 - Sản phẩm nổi bật -->
+        <div class="layout4">
+            <div class="product">
+                <img src="images/aosale.webp" alt="Khuyến mãi 50%">
+                <h3>OUTLET UP TO 50%</h3>
+            </div>
+            <div class="product">
+                <img src="images/sale1.webp" alt="Áo Khoác Nữ Công Nghệ">
+                <div class="color-options">
+                    <span class="color white"></span>
+                    <span class="color black"></span>
+                    <span class="color blue"></span>
+                </div>
+                <h3>Áo Khoác Nữ Công Nghệ X-Jacket </h3>
+                <p>529,000 VNĐ <del>1,259,000 VNĐ</del> <span class="discount">-58%</span></p>
+                
+            </div>
+            <div class="product">
+                <img src="images/sale2.webp" alt="Áo Khoác Nam Công Nghệ">
+                <div class="color-options">
+                    <span class="color white"></span>
+                    <span class="color black"></span>
+                    <span class="color blue"></span>
+                </div>
+                <h3>Áo Khoác Nam Công Nghệ X-Jacket</h3>
+                <p>549,000 VNĐ <del>1,299,000 VNĐ</del> <span class="discount">-58%</span></p>
+               
+            </div>
+            <div class="product">
+                <img src="images/sale3.png" alt="Áo Khoác Dù Nam Bomber">
+                <div class="color-options">
+                    <span class="color black"></span>
+                    <span class="color green"></span>
+                </div>
+                <h3>Áo Khoác Dù Nam Bomber Túi Hộp</h3>
+                <p>399,000 VNĐ <del>799,000 VNĐ</del> <span class="discount">-50%</span></p>     
+        </div>
+            
+        </div>
+        <div>
+            <img src="images/banner_duoi.png" alt="">
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>ĐĂNG KÍ NHẬN TIN KHUYẾN MÃI</h4>
+                <input type="email" placeholder="Nhập email của bạn">
+                <button><i class="bi bi-envelope"></i></button>
+            </div>
+            <div class="footer-section">
+                <h4>KHÁM PHÁ</h4>
+                <ul>
+                    <li>BST Fast & Furious</li>
+                    <li>BST Summer</li>
+                    <li>BST Minion</li>
+                    <li>Áo Khoác</li>
+                    <li>Áo Thun</li>
+                    <li>Áo Polo</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>VỀ COUPLE TX</h4>
+                <ul>
+                    <li>Giới Thiệu</li>
+                    <li>Nhượng Quyền Thương Mại</li>
+                    <li>Công Nghệ Sản Xuất</li>
+                    <li>Cơ Hội Việc Làm</li>
+                    <li>Điều Khoản Sử Dụng</li>
+                    <li>Hệ Thống Cửa Hàng</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>TÀI KHOẢN</h4>
+                <ul>
+                    <li>Đăng Nhập/Đăng Ký</li>
+                    <li>Lịch Sử Mua Hàng</li>
+                    <li>Danh Sách Địa Chỉ</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li>Chính Sách Thành Viên</li>
+                    <li>Chính Sách Đổi Hàng</li>
+                    <li>Chính Sách Bảo Hành</li>
+                    <li>Hướng Dẫn Mua Hàng</li>
+                    <li>Hướng Dẫn Chọn Size</li>
+                    <li>Câu Hỏi Thường Gặp</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

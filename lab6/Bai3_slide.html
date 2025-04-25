@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Viewer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin-top: 30px;
+        }
+
+        .image {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .nav button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .nav button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="image">
+        <img src="images/ao2.webp" alt="Image" id="box-image">
+    </div>
+    <div class="nav">
+        <button onclick="first()">First</button>
+        <button onclick="previous()">Previous</button>
+        <button onclick="next()">Next</button>
+        <button onclick="last()">Last</button>
+    </div>
+
+    <script>
+        var arrimg = [`ao2.webp`, `thun1.webp`, `ao3.webp`, `thun4.webp`, `thun3.webp`];
+        var hinh = document.getElementById("box-image");
+        var vtht = 0;
+
+        function updateImage() {
+            hinh.src = `images/` + arrimg[vtht];
+        }
+
+        function first() {
+            vtht = 0;
+            updateImage();
+        }
+
+        function last() {
+            vtht = arrimg.length - 1;
+            updateImage();
+        }
+
+        function next() {
+            vtht++;
+                if (vtht >= arrimg.length) {
+            vtht = 0;
+    }
+    updateImage();
+}
+
+
+function previous() {
+    vtht--;
+    if (vtht < 0) {
+        vtht = arrimg.length - 1;
+    }
+    updateImage();
+}
+
+    </script>
+</body>
+</html>

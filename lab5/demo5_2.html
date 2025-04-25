@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div img{
+        width: 200xpx;
+        height: 400px;
+    }
+    img{
+        height: 100px;
+    }
+</style>
+<script>
+    function hienThi(str=`ao3.webp`) {
+        var node = document.getElementById("anhDiv");
+        node.innerHTML= `<img src="images/` + str + `" alt= "">`;
+    }
+  
+
+</script>
+<body>
+    <h1>Nhấn vào để hiển thị </h1>
+    <div id="anhDiv"> <img src="images/ao3.webp" alt=""></div>
+    <img src="images/ao2.webp" alt="" onclick="hienThi(`ao2.webp`)">
+    <img src="images/ao4.jpg" alt="" onclick="hienThi(`ao4.jpg`)">
+    <img src="images/nam.webp" alt="" onclick="hienThi(`nam.webp`)">
+    <img src="images/polocaocap.webp" alt="" onclick="hienThi(`polocaocap.webp`)">
+
+    <!-- <input type="button" value="Hiển thị ảnh" onclick="hienThi()" onmouseover=""> -->
+</body>
+</html>
